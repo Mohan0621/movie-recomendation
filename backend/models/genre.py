@@ -1,11 +1,5 @@
 from app import db
-
-class Movie(db.Model):
-    __tablename__ = "movies"
-
+class Genre(db.Model):
+    __tablename__ = "genres"
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255), nullable=False)
-    release_year = db.Column(db.Integer)
-    imdb_rating = db.Column(db.Numeric(3, 1))
-    director = db.Column(db.String(255))
-    synopsis = db.Column(db.Text)
+    name = db.Column(db.String(80), unique=True, nullable=False)
